@@ -1,0 +1,26 @@
+{
+  "header": {
+    "news": "News",
+    "myVocabulary": "My Vocabulary",
+    "beginner": "🎯 Beginner",
+    "intermediate": "📈 Intermediate",
+    "advanced": "🧠 Advanced",
+    "logout": "Logout",
+    "loginWithGoogle": "Login with Google"
+  },
+  "mainPage": {
+    "title": "Daily English News",
+    "userStats_one": "Reading level: {{level}} • {{count}} article available",
+    "userStats_other": "Reading level: {{level}} • {{count}} articles available",
+    "loginPrompt": "Login to track your progress and get personalized recommendations",
+    "filters": "Filters",
+    "allLevels": "🌟 All Levels",
+    "level": "Level",
+    "category": "Category",
+    "allCategories": "📰 All Categories",
+    "recommendedForYou": "Recommended for You",
+    "userLevelPrompt": "Perfect for your {{level}} level 🎯",
+    "noArticlesFoundMatchingYourCriteria": "No articles found matching your criteria.",
+    "tryAdjustingYourFiltersOrSearchTerms": "Try adjusting your filters or search terms."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "news": "Noticias",
+    "myVocabulary": "Mi vocabulario",
+    "beginner": "🎯 Principiante",
+    "intermediate": "📈 Intermedio",
+    "advanced": "🧠 Avanzado",
+    "logout": "Cerrar sesión",
+    "loginWithGoogle": "Iniciar sesión con Google"
+  },
+  "mainPage": {
+    "title": "Noticias diarias en inglés",
+    "userStats_one": "Nivel de lectura: {{level}} • {{count}} artículo disponible",
+    "userStats_other": "Nivel de lectura: {{level}} • {{count}} artículos disponibles",
+    "loginPrompt": "Inicia sesión para seguir tu progreso y recibir recomendaciones personalizadas",
+    "filters": "Filtros",
+    "allLevels": "🌟 Todos los niveles",
+    "level": "Nivel",
+    "category": "Categoría",
+    "allCategories": "📰 Todas las categorías",
+    "recommendedForYou": "Recomendado para ti",
+    "userLevelPrompt": "Perfecto para tu nivel {{level}} 🎯",
+    "noArticlesFoundMatchingYourCriteria": "No se encontraron artículos que coincidan con tus criterios.",
+    "tryAdjustingYourFiltersOrSearchTerms": "Intenta ajustar tus filtros o términos de búsqueda."
+  }
+}

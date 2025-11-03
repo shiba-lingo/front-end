@@ -10,6 +10,9 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { BookOpen, LogIn, LogOut, User } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import { useParams } from "next/navigation";
 
 interface HeaderProps {
   currentView: "news" | "vocabulary";
@@ -18,6 +21,9 @@ interface HeaderProps {
 
 export const Header = ({ currentView, onViewChange }: HeaderProps) => {
   const { user, login, logout, updateUserLevel } = useAuth();
+  const [locale, setLocale] = useState("en");
+  const { t } = useTranslation("common");
+  const params = useParams();
 
   return (
     <header className="border-b border-shiba-teal/20 bg-white/80 backdrop-blur-md shadow-lg shadow-shiba-teal/5">
@@ -52,7 +58,7 @@ export const Header = ({ currentView, onViewChange }: HeaderProps) => {
                       : "text-shiba-navy hover:bg-shiba-teal/10 hover:text-shiba-dark-teal"
                   }
                 >
-                  News
+                  {t("header.news")}
                 </Button>
                 <Button
                   variant={currentView === "vocabulary" ? "default" : "ghost"}
@@ -63,7 +69,7 @@ export const Header = ({ currentView, onViewChange }: HeaderProps) => {
                       : "text-shiba-navy hover:bg-shiba-orange/10 hover:text-shiba-orange"
                   }
                 >
-                  My Vocabulary
+                  {t("header.myVocabulary")}
                 </Button>
               </nav>
             )}
@@ -88,19 +94,51 @@ export const Header = ({ currentView, onViewChange }: HeaderProps) => {
                       value="beginner"
                       className="text-shiba-navy hover:bg-shiba-teal/10"
                     >
-                      🎯 Beginner
+                      {t("header.beginner")}
                     </SelectItem>
                     <SelectItem
                       value="intermediate"
                       className="text-shiba-navy hover:bg-shiba-orange/10"
                     >
-                      📈 Intermediate
+                      {t("header.intermediate")}
                     </SelectItem>
                     <SelectItem
                       value="advanced"
                       className="text-shiba-navy hover:bg-purple-100"
                     >
-                      🧠 Advanced
+                      {t("header.advanced")}
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+
+                <Select
+                  value={params.lng as string}
+                  onValueChange={(value) => {
+                    setLocale(value as "en" | "de" | "zh");
+                    location.href = `./${value}`;
+                  }}
+                >
+                  <SelectTrigger className="w-36 border-shiba-teal/30 bg-white/50 backdrop-blur-sm hover:border-shiba-teal text-shiba-navy">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white/95 backdrop-blur-md border-shiba-teal/20">
+                    <SelectItem
+                      value="en"
+                      className="text-shiba-navy hover:bg-shiba-teal/10"
+                    >
+                      English
+                    </SelectItem>
+                    <SelectItem
+                      value="de"
+                      className="text-shiba-navy hover:bg-shiba-orange/10"
+                    >
+                      Español
+                    </SelectItem>
+                    <SelectItem
+                      value="zh"
+                      className="text-shiba-navy hover:bg-purple-100"
+                    >
+                      中文
                     </SelectItem>
                   </SelectContent>
                 </Select>
@@ -124,7 +162,7 @@ export const Header = ({ currentView, onViewChange }: HeaderProps) => {
                   className="border-shiba-orange/50 text-shiba-orange hover:bg-shiba-orange hover:text-white transition-colors"
                 >
                   <LogOut className="h-4 w-4 mr-2" />
-                  Logout
+                  {t("header.logout")}
                 </Button>
               </>
             ) : (
@@ -133,7 +171,7 @@ export const Header = ({ currentView, onViewChange }: HeaderProps) => {
                 className="bg-shiba-teal hover:bg-shiba-dark-teal text-white shadow-lg shadow-shiba-teal/20 rounded-xl"
               >
                 <LogIn className="h-4 w-4 mr-2" />
-                Login with Google
+                {t("header.loginWithGoogle")}
               </Button>
             )}
           </div>

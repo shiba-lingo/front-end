@@ -1,0 +1,26 @@
+{
+  "header": {
+    "news": "新聞",
+    "myVocabulary": "我的單字",
+    "beginner": "🎯 初學者",
+    "intermediate": "📈 中級",
+    "advanced": "🧠 進階",
+    "logout": "登出",
+    "loginWithGoogle": "使用 Google 登入"
+  },
+  "mainPage": {
+    "title": "每日英文新聞",
+    "userStats_one": "閱讀等級：{{level}} • {{count}} 篇文章可用",
+    "userStats_other": "閱讀等級：{{level}} • {{count}} 篇文章可用",
+    "loginPrompt": "登入以追蹤你的進度並獲得個人化推薦",
+    "filters": "篩選條件",
+    "allLevels": "🌟 所有等級",
+    "level": "等級",
+    "category": "分類",
+    "allCategories": "📰 所有分類",
+    "recommendedForYou": "為你推薦",
+    "userLevelPrompt": "非常適合你的 {{level}} 等級 🎯",
+    "noArticlesFoundMatchingYourCriteria": "找不到符合條件的文章。",
+    "tryAdjustingYourFiltersOrSearchTerms": "請嘗試調整篩選條件或搜尋關鍵字。"
+  }
+}
