@@ -111,38 +111,6 @@ export const Header = ({ currentView, onViewChange }: HeaderProps) => {
                   </SelectContent>
                 </Select>
 
-                <Select
-                  value={params.lng as string}
-                  onValueChange={(value) => {
-                    setLocale(value as "en" | "de" | "zh");
-                    location.href = `./${value}`;
-                  }}
-                >
-                  <SelectTrigger className="w-36 border-shiba-teal/30 bg-white/50 backdrop-blur-sm hover:border-shiba-teal text-shiba-navy">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent className="bg-white/95 backdrop-blur-md border-shiba-teal/20">
-                    <SelectItem
-                      value="en"
-                      className="text-shiba-navy hover:bg-shiba-teal/10"
-                    >
-                      English
-                    </SelectItem>
-                    <SelectItem
-                      value="de"
-                      className="text-shiba-navy hover:bg-shiba-orange/10"
-                    >
-                      Español
-                    </SelectItem>
-                    <SelectItem
-                      value="zh"
-                      className="text-shiba-navy hover:bg-purple-100"
-                    >
-                      中文
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
-
                 <div className="flex items-center space-x-2">
                   <Avatar className="ring-2 ring-shiba-teal/20 ring-offset-2">
                     <AvatarImage src={user.avatar} alt={user.name} />
@@ -174,6 +142,37 @@ export const Header = ({ currentView, onViewChange }: HeaderProps) => {
                 {t("header.loginWithGoogle")}
               </Button>
             )}
+            <Select
+              value={params.lng as string}
+              onValueChange={(value) => {
+                setLocale(value as "en" | "de" | "zh");
+                location.href = `./${value}`;
+              }}
+            >
+              <SelectTrigger className="w-36 border-shiba-teal/30 bg-white/50 backdrop-blur-sm hover:border-shiba-teal text-shiba-navy">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent className="bg-white/95 backdrop-blur-md border-shiba-teal/20">
+                <SelectItem
+                  value="en"
+                  className="text-shiba-navy hover:bg-shiba-teal/10"
+                >
+                  English
+                </SelectItem>
+                <SelectItem
+                  value="de"
+                  className="text-shiba-navy hover:bg-shiba-orange/10"
+                >
+                  Español
+                </SelectItem>
+                <SelectItem
+                  value="zh"
+                  className="text-shiba-navy hover:bg-purple-100"
+                >
+                  中文
+                </SelectItem>
+              </SelectContent>
+            </Select>
           </div>
         </div>
       </div>
