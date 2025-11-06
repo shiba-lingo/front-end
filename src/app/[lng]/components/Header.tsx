@@ -127,7 +127,7 @@ export const Header = ({ currentView, onViewChange }: HeaderProps) => {
                   variant="outline"
                   size="sm"
                   onClick={logout}
-                  className="border-shiba-orange/50 text-shiba-orange hover:bg-shiba-orange hover:text-white transition-colors"
+                  className="border-shiba-orange/50 text-shiba-orange hover:bg-shiba-orange hover:text-black transition-colors"
                 >
                   <LogOut className="h-4 w-4 mr-2" />
                   {t("header.logout")}
