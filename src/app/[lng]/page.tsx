@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -8,6 +8,8 @@ import { ArticleReader } from "./components/ArticleReader";
 import { VocabularyManager } from "./components/VocabularyManager";
 import { mockNews } from "./data/mockNews";
 import { NewsArticle } from "./types";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+
 
 type View = "news" | "vocabulary" | "article";
 
@@ -33,28 +35,33 @@ export default function Home() {
   };
 
   return (
-    <AuthProvider>
-      <div className="min-h-screen bg-gradient-to-br from-shiba-cream via-white to-shiba-light-teal/10">
-        <Header
-          currentView={currentView === "article" ? "news" : currentView}
-          onViewChange={handleViewChange}
-        />
+    <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ''}>
+      <AuthProvider>
+        <div className="min-h-screen bg-gradient-to-br from-shiba-cream via-white to-shiba-light-teal/10">
+          <Header
+            currentView={currentView === "article" ? "news" : currentView}
+            onViewChange={handleViewChange}
+          />
 
-        <main>
-          {currentView === "news" && (
-            <NewsFeed articles={mockNews} onArticleClick={handleArticleClick} />
-          )}
+          <main>
+            {currentView === "news" && (
+              <NewsFeed
+                articles={mockNews}
+                onArticleClick={handleArticleClick}
+              />
+            )}
 
-          {currentView === "vocabulary" && <VocabularyManager />}
+            {currentView === "vocabulary" && <VocabularyManager />}
 
-          {currentView === "article" && selectedArticle && (
-            <ArticleReader
-              article={selectedArticle}
-              onBack={handleBackToNews}
-            />
-          )}
-        </main>
-      </div>
-    </AuthProvider>
+            {currentView === "article" && selectedArticle && (
+              <ArticleReader
+                article={selectedArticle}
+                onBack={handleBackToNews}
+              />
+            )}
+          </main>
+        </div>
+      </AuthProvider>
+    </GoogleOAuthProvider>
   );
 }
