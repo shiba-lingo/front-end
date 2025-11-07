@@ -34,8 +34,11 @@ export default function Home() {
     setSelectedArticle(null);
   };
 
+  const publicUrl = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
+  console.log("publicUrl", publicUrl);
+
   return (
-    <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ''}>
+    <GoogleOAuthProvider clientId={publicUrl || ''}>
       <AuthProvider>
         <div className="min-h-screen bg-gradient-to-br from-shiba-cream via-white to-shiba-light-teal/10">
           <Header
