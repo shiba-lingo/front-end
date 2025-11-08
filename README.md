@@ -43,7 +43,7 @@ This is the frontend of Shiba-lingo. It is build with [Next.js](https://nextjs.o
     ```
    Run container
     ```bash
-    docker run -d -p 3001:3001 \
+    docker run -d -p 3000:3000 \
     -e NODE_ENV=production \
     -e PORT=3000 \
     -e NEXT_PUBLIC_USER_SERVICE_API_BASE_URL="http://localhost:3001" \
@@ -52,7 +52,6 @@ This is the frontend of Shiba-lingo. It is build with [Next.js](https://nextjs.o
     -e NEXT_PUBLIC_GOOGLE_CLIENT_ID="google_oauth_client_id" \
     shiba-user:latest
     ```
-
 
 
 ## Learn More
