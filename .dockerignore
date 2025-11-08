@@ -24,8 +24,8 @@ coverage
 # CRITICAL: Prevents local environment files/secrets from being included
 # in the image layers. Use build arguments or runtime environment variables instead.
 # ----------------------------------------------------
-.env
-.env.*
+#.env
+#.env.*
 .vault-token
 .ssh
 
