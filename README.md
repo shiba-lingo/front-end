@@ -1,24 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend Service
+
+This is the frontend of Shiba-lingo. It is build with [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
+    ```sh
+    npm install
+    ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. **Set up environment variables:**
+   Create a file named `.env.local` in the root of the project and add the following variables.
+    ```.env
+    NEXT_PUBLIC_USER_SERVICE_API_BASE_URL=http://localhost:3001
+    NEXT_PUBLIC_CONTENT_SERVICE_API_BASE_URL=http://localhost:3002
+    NEXT_PUBLIC_LEARNING_SERVICE_API_BASE_URL=http://localhost:3003
+    
+    NEXT_PUBLIC_GOOGLE_CLIENT_ID=google_oauth_client_id
+    ```
+    
+3. **Start the server:**
+    ```sh
+    # production
+    npm run build
+    npm start
+    
+    # development
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    
+    You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    
+    This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. **Run Container:**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   Create the docker container with:
+    ```bash
+    docker build -t shiba-frontend:latest .
+    ```
+   Run container
+    ```bash
+    docker run -d -p 3001:3001 \
+    -e NODE_ENV=production \
+    -e PORT=3000 \
+    -e NEXT_PUBLIC_USER_SERVICE_API_BASE_URL="http://localhost:3001" \
+    -e NEXT_PUBLIC_CONTENT_SERVICE_API_BASE_URL="http://localhost:3002" \
+    -e NEXT_PUBLIC_LEARNING_SERVICE_API_BASE_URL="http://localhost:3003" \
+    -e NEXT_PUBLIC_GOOGLE_CLIENT_ID="google_oauth_client_id" \
+    shiba-user:latest
+    ```
+
+
 
 ## Learn More
 
