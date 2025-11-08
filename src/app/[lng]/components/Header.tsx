@@ -112,12 +112,14 @@ export const Header = ({ currentView, onViewChange }: HeaderProps) => {
                 </Select>
 
                 <div className="flex items-center space-x-2">
-                  <Avatar className="ring-2 ring-shiba-teal/20 ring-offset-2">
-                    <AvatarImage src={user.avatar} alt={user.name} />
-                    <AvatarFallback className="bg-shiba-teal text-white">
-                      <User className="h-4 w-4" />
-                    </AvatarFallback>
-                  </Avatar>
+                  {user.avatar && (
+                    <Avatar className="ring-2 ring-shiba-teal/20 ring-offset-2">
+                      <AvatarImage src={user.avatar} alt={user.name} />
+                      <AvatarFallback className="bg-shiba-teal text-white">
+                        <User className="h-4 w-4" />
+                      </AvatarFallback>
+                    </Avatar>
+                  )}
                   <span className="hidden sm:block font-medium text-shiba-navy">
                     {user.name}
                   </span>
