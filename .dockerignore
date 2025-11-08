@@ -1,0 +1,50 @@
+# ----------------------------------------------------
+# 1. Dependency Directories
+# These are installed inside the container via 'npm install',
+# so they should not be copied from your local machine.
+# ----------------------------------------------------
+node_modules
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ----------------------------------------------------
+# 2. Next.js/React Build Artifacts and Cache
+# These directories are created by Next.js during the build process
+# and should be generated inside the container, not copied from local.
+# ----------------------------------------------------
+.next             # The primary build and output folder for Next.js
+out               # Static export output (if you use next export)
+.vercel            # Vercel-specific configuration and cache
+.turbo            # TurboRepo cache directory (if used)
+coverage
+
+# ----------------------------------------------------
+# 3. Environment/Secrets
+# CRITICAL: Prevents local environment files/secrets from being included
+# in the image layers. Use build arguments or runtime environment variables instead.
+# ----------------------------------------------------
+.env
+.env.*
+.vault-token
+.ssh
+
+# ----------------------------------------------------
+# 4. Version Control and Docker Files
+# Files that are local to the repository or related to the build process itself.
+# ----------------------------------------------------
+.git
+.gitignore
+.dockerignore
+Dockerfile
+docker-compose.yml
+docker-compose.*.yml
+
+# ----------------------------------------------------
+# 5. Editor/OS Files
+# Files created by IDEs (VS Code, IntelliJ) or Operating Systems.
+# ----------------------------------------------------
+.vscode
+.idea
+.DS_Store
+Thumbs.db
