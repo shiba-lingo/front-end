@@ -35,13 +35,17 @@ export default function Home() {
     setSelectedArticle(null);
   };
 
-  useEffect(()=>{
-      apiClients.content.get("/contents")
-      .then(res => {
-        console.log(res.data.data)
-        setNews(res.data.data)
-      })
-  },[])
+  useEffect(() => {
+    apiClients.content.get("/contents").then((res) => {
+      const newsData = res.data.data.map((news: NewsArticle) => {
+        return {
+          ...news,
+          imageUrl: news.imageUrl.replace("240", "960"),
+        };
+      });
+      setNews(newsData);
+    });
+  }, []);
 
   return (
     <GoogleOAuthProvider
@@ -56,10 +60,7 @@ export default function Home() {
 
           <main>
             {currentView === "news" && (
-              <NewsFeed
-                articles={news}
-                onArticleClick={handleArticleClick}
-              />
+              <NewsFeed articles={news} onArticleClick={handleArticleClick} />
             )}
 
             {currentView === "vocabulary" && <VocabularyManager />}

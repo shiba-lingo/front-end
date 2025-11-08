@@ -35,7 +35,7 @@ export const ArticleReader = ({ article, onBack }: ArticleReaderProps) => {
         word: selectedText,
         definition,
         sentence,
-        articleId: article.id,
+        articleId: article._id,
         articleTitle: article.title
       });
       setSelectedText('');
@@ -50,7 +50,7 @@ export const ArticleReader = ({ article, onBack }: ArticleReaderProps) => {
       addSavedSentence({
         sentence: selectedText,
         context,
-        articleId: article.id,
+        articleId: article._id,
         articleTitle: article.title
       });
       setSelectedText('');

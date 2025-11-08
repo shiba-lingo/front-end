@@ -174,7 +174,7 @@ export const NewsFeed = ({ articles, onArticleClick }: NewsFeedProps) => {
                 .slice(0, 3)
                 .map((article, index) => (
                   <div
-                    key={article.id}
+                    key={article._id}
                     className="animate-in fade-in slide-in-from-left-4 duration-500"
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
@@ -216,7 +216,7 @@ export const NewsFeed = ({ articles, onArticleClick }: NewsFeedProps) => {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {recommendedArticles.map((article, index) => (
             <div
-              key={article.id}
+              key={article._id}
               className="animate-in fade-in slide-in-from-bottom-4 duration-300"
               style={{ animationDelay: `${index * 100}ms` }}
             >
