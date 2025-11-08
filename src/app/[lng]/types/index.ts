@@ -8,7 +8,7 @@ export interface User {
 }
 
 export interface NewsArticle {
-  id: string;
+  _id: string;
   title: string;
   summary: string;
   content: string;
@@ -20,7 +20,7 @@ export interface NewsArticle {
 }
 
 export interface VocabularyWord {
-  id: string;
+  _id: string;
   word: string;
   definition: string;
   sentence: string;
@@ -30,7 +30,7 @@ export interface VocabularyWord {
 }
 
 export interface SavedSentence {
-  id: string;
+  _id: string;
   sentence: string;
   context: string;
   articleId: string;
