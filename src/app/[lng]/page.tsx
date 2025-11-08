@@ -1,20 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AuthProvider } from "./contexts/AuthContext";
 import { Header } from "./components/Header";
 import { NewsFeed } from "./components/NewsFeed";
 import { ArticleReader } from "./components/ArticleReader";
 import { VocabularyManager } from "./components/VocabularyManager";
-import { mockNews } from "./data/mockNews";
+// import { mockNews } from "./data/mockNews";
 import { NewsArticle } from "./types";
 import { GoogleOAuthProvider } from "@react-oauth/google";
-
+import apiClients from "../../lib/apiClient";
 
 type View = "news" | "vocabulary" | "article";
 
 export default function Home() {
   const [currentView, setCurrentView] = useState<View>("news");
+  const [news, setNews] = useState<NewsArticle[]>([]);
   const [selectedArticle, setSelectedArticle] = useState<NewsArticle | null>(
     null
   );
@@ -34,8 +35,18 @@ export default function Home() {
     setSelectedArticle(null);
   };
 
+  useEffect(()=>{
+      apiClients.content.get("/contents")
+      .then(res => {
+        console.log(res.data.data)
+        setNews(res.data.data)
+      })
+  },[])
+
   return (
-    <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ''}>
+    <GoogleOAuthProvider
+      clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ""}
+    >
       <AuthProvider>
         <div className="min-h-screen bg-gradient-to-br from-shiba-cream via-white to-shiba-light-teal/10">
           <Header
@@ -46,7 +57,7 @@ export default function Home() {
           <main>
             {currentView === "news" && (
               <NewsFeed
-                articles={mockNews}
+                articles={news}
                 onArticleClick={handleArticleClick}
               />
             )}
