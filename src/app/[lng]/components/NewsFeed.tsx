@@ -13,6 +13,12 @@ interface NewsFeedProps {
   onArticleClick: (article: NewsArticle) => void;
 }
 
+const articleToUserLevel: Record<string, 'beginner' | 'intermediate' | 'advanced'> = {
+  easy: "beginner",
+  medium: "intermediate",
+  hard: "advanced",
+};
+
 export const NewsFeed = ({ articles, onArticleClick }: NewsFeedProps) => {
   const { user } = useAuth();
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,6 +33,7 @@ export const NewsFeed = ({ articles, onArticleClick }: NewsFeedProps) => {
     return ["all", ...cats];
   }, [articles]);
 
+  //const levels = ["all", "easy", "medium", "hard"];
   const levels = ["all", "beginner", "intermediate", "advanced"];
 
   const filteredArticles = useMemo(() => {
@@ -37,7 +44,7 @@ export const NewsFeed = ({ articles, onArticleClick }: NewsFeedProps) => {
       const matchesCategory =
         selectedCategory === "all" || article.category === selectedCategory;
       const matchesLevel =
-        selectedLevel === "all" || article.level === selectedLevel;
+        selectedLevel === "all" || articleToUserLevel[article.level] === selectedLevel;
 
       return matchesSearch && matchesCategory && matchesLevel;
     });
@@ -48,10 +55,10 @@ export const NewsFeed = ({ articles, onArticleClick }: NewsFeedProps) => {
 
     // Show articles matching user's level first, then others
     const userLevelArticles = filteredArticles.filter(
-      (article) => article.level === user.level
+      (article) => articleToUserLevel[article.level] === user.level
     );
     const otherArticles = filteredArticles.filter(
-      (article) => article.level !== user.level
+      (article) => articleToUserLevel[article.level] !== user.level
     );
 
     return [...userLevelArticles, ...otherArticles];
@@ -170,7 +177,7 @@ export const NewsFeed = ({ articles, onArticleClick }: NewsFeedProps) => {
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {recommendedArticles
-                .filter((article) => article.level === user.level)
+                .filter((article) => articleToUserLevel[article.level] === user.level)
                 .slice(0, 3)
                 .map((article, index) => (
                   <div
