@@ -15,7 +15,7 @@ This is the frontend of Shiba-lingo. It is build with [Next.js](https://nextjs.o
     NEXT_PUBLIC_USER_SERVICE_API_BASE_URL=http://localhost:3001
     NEXT_PUBLIC_CONTENT_SERVICE_API_BASE_URL=http://localhost:3002
     NEXT_PUBLIC_LEARNING_SERVICE_API_BASE_URL=http://localhost:3003
-    
+    NEXT_PUBLIC_DICTIONARY_API=https://api.dictionaryapi.dev/api/v2/entries
     NEXT_PUBLIC_GOOGLE_CLIENT_ID=google_oauth_client_id
     ```
     
@@ -49,6 +49,7 @@ This is the frontend of Shiba-lingo. It is build with [Next.js](https://nextjs.o
     -e NEXT_PUBLIC_USER_SERVICE_API_BASE_URL="http://localhost:3001" \
     -e NEXT_PUBLIC_CONTENT_SERVICE_API_BASE_URL="http://localhost:3002" \
     -e NEXT_PUBLIC_LEARNING_SERVICE_API_BASE_URL="http://localhost:3003" \
+    -e NEXT_PUBLIC_DICTIONARY_API="https://api.dictionaryapi.dev/api/v2/entries" \
     -e NEXT_PUBLIC_GOOGLE_CLIENT_ID="google_oauth_client_id" \
     shiba-user:latest
     ```
