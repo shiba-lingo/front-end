@@ -37,3 +37,29 @@ export interface SavedSentence {
   articleTitle: string;
   createdAt: string;
 }
+
+interface Phonetic {
+  text?: string;
+  audio?: string;
+}
+
+
+interface DefinitionDetail {
+  definition: string;
+  example?: string;
+  synonyms?: string[];
+  antonyms?: string[];
+}
+
+interface Meaning {
+  partOfSpeech: string;
+  definitions: DefinitionDetail[];
+}
+
+export interface WordData {
+  word: string;
+  phonetic?: string; // 根目錄有時會有一個預設音標
+  phonetics: Phonetic[];
+  meanings: Meaning[];
+  sourceUrls?: string[];
+}

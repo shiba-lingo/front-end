@@ -21,6 +21,35 @@
     "recommendedForYou": "Recommended for You",
     "userLevelPrompt": "Perfect for your {{level}} level 🎯",
     "noArticlesFoundMatchingYourCriteria": "No articles found matching your criteria.",
-    "tryAdjustingYourFiltersOrSearchTerms": "Try adjusting your filters or search terms."
+    "tryAdjustingYourFiltersOrSearchTerms": "Try adjusting your filters or search terms.",
+    "allArticles": "📚 All Articles",
+    "articles": "📖 Articles",
+    "searchArticles": "Search articles... 🔍"
+  },
+  "reader": {
+    "notSupportAudio": "Your browser does not support the audio element.",
+    "backToNews": "Back to News",
+    "minRead": "min read",
+    "selected": "Selected",
+    "addToVocabulary": "Add to Vocabulary",
+    "addVocabularyWord": "Add Vocabulary Word",
+    "word": "Word",
+    "definition": "Definition",
+    "saveWord": "Save Word",
+    "saveSentence": "Save Sentence",
+    "selectedText": "Selected Text",
+    "enterDefinition": "Enter the definition..."
+  },
+  "vocaManager": {
+    "description": "Track your progress and review saved words and sentences",
+    "vocabulary": "Vocabulary",
+    "sentences": "Sentences",
+    "noVoca": "No vocabulary words yet",
+    "startReading": "Start reading articles and save words to build your vocabulary",
+    "noSenten": "No saved sentences yet",
+    "startSenten": "Start reading articles and save useful sentences for reference",
+    "context": "Context:",
+    "savedOn": " Saved on",
+    "search": "Search vocabulary and sentences..."
   }
 }

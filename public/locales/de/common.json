@@ -21,6 +21,35 @@
     "recommendedForYou": "Recomendado para ti",
     "userLevelPrompt": "Perfecto para tu nivel {{level}} 🎯",
     "noArticlesFoundMatchingYourCriteria": "No se encontraron artículos que coincidan con tus criterios.",
-    "tryAdjustingYourFiltersOrSearchTerms": "Intenta ajustar tus filtros o términos de búsqueda."
+    "tryAdjustingYourFiltersOrSearchTerms": "Intenta ajustar tus filtros o términos de búsqueda.",
+    "allArticles": "📚 Todos los Artículos",
+    "articles": "📖 Artículos",
+    "searchArticles": "Buscar artículos... 🔍"
+  },
+  "reader": {
+    "notSupportAudio": "Su navegador no admite el elemento de audio.",
+    "backToNews": "Volver a Noticias",
+    "minRead": "min de lectura",
+    "selected": "Seleccionado",
+    "addToVocabulary": "Agregar al Vocabulario",
+    "addVocabularyWord": "Agregar Palabra al Vocabulario",
+    "word": "Palabra",
+    "definition": "Definición",
+    "saveWord": "Guardar Palabra",
+    "saveSentence": "Guardar Oración",
+    "selectedText": "Texto Seleccionado",
+    "enterDefinition": "Ingrese la definición..."
+  },
+  "vocaManager": {
+    "description": "Haz un seguimiento de tu progreso y revisa las palabras y oraciones guardadas",
+    "vocabulary": "Vocabulario",
+    "sentences": "Oraciones",
+    "noVoca": "Aún no hay palabras en el vocabulario",
+    "startReading": "Empieza a leer artículos y guarda palabras para construir tu vocabulario",
+    "noSenten": "Aún no hay oraciones guardadas",
+    "startSenten": "Empieza a leer artículos y guarda oraciones útiles como referencia",
+    "context": "Contexto:",
+    "savedOn": " Guardado el",
+    "search": "Buscar vocabulario y oraciones..."
   }
 }

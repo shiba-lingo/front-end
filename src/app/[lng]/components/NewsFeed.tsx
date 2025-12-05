@@ -81,7 +81,7 @@ export const NewsFeed = ({ articles, onArticleClick }: NewsFeedProps) => {
           <div className="relative">
             <Search className="absolute left-4 top-4 h-5 w-5 text-shiba-teal" />
             <Input
-              placeholder="Search articles... 🔍"
+              placeholder={t("mainPage.searchArticles")}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-12 h-12 border-shiba-teal/30 bg-white/90 backdrop-blur-sm rounded-2xl focus:border-shiba-teal focus:ring-shiba-teal/20 shadow-sm"
@@ -195,8 +195,8 @@ export const NewsFeed = ({ articles, onArticleClick }: NewsFeedProps) => {
           selectedLevel === "all" &&
           selectedCategory === "all" &&
           !searchTerm
-            ? "📚 All Articles"
-            : `📖 Articles (${recommendedArticles.length})`}
+            ? t("mainPage.allArticles")
+            : `${t("mainPage.articles")} (${recommendedArticles.length})`}
         </h2>
       </div>
 

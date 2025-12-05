@@ -21,6 +21,35 @@
     "recommendedForYou": "為你推薦",
     "userLevelPrompt": "非常適合你的 {{level}} 等級 🎯",
     "noArticlesFoundMatchingYourCriteria": "找不到符合條件的文章。",
-    "tryAdjustingYourFiltersOrSearchTerms": "請嘗試調整篩選條件或搜尋關鍵字。"
+    "tryAdjustingYourFiltersOrSearchTerms": "請嘗試調整篩選條件或搜尋關鍵字。",
+    "allArticles": "📚 所有文章",
+    "articles": "📖 文章",
+    "searchArticles": "搜尋文章... 🔍"
+  },
+  "reader": {
+    "notSupportAudio": "您的瀏覽器不支援音訊播放。",
+    "backToNews": "返回新聞",
+    "minRead": "分鐘 閱讀",
+    "selected": "已選取",
+    "addToVocabulary": "加入字彙表",
+    "addVocabularyWord": "新增字彙",
+    "word": "單字",
+    "definition": "定義",
+    "saveWord": "儲存單字",
+    "saveSentence": "儲存句子",
+    "selectedText": "已選取文字",
+    "enterDefinition": "請輸入定義..."
+  },
+  "vocaManager": {
+    "description": "追蹤你的進度並查看已儲存的單字與句子",
+    "vocabulary": "字彙",
+    "sentences": "句子",
+    "noVoca": "目前沒有字彙",
+    "startReading": "開始閱讀文章並儲存單字來建立你的字彙庫",
+    "noSenten": "目前沒有儲存句子",
+    "startSenten": "開始閱讀文章並儲存有用的句子以供參考",
+    "context": "語境：",
+    "savedOn": " 儲存於",
+    "search": "搜尋字彙與句子..."
   }
 }

@@ -6,6 +6,7 @@ import { Badge } from "./ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { Input } from "./ui/input";
 import { Trash2, Search, BookOpen, MessageSquare } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export const VocabularyManager = () => {
   const {
@@ -15,6 +16,7 @@ export const VocabularyManager = () => {
     removeSavedSentence,
   } = useVocabulary();
   const [searchTerm, setSearchTerm] = useState("");
+  const { t } = useTranslation("common");
 
   const filteredWords = vocabularyWords.filter(
     (word) =>
@@ -31,20 +33,18 @@ export const VocabularyManager = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-6">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold mb-2">My Vocabulary</h1>
-        <p className="text-gray-600">
-          Track your progress and review saved words and sentences
-        </p>
+        <h1 className="text-3xl font-bold mb-2">{t("header.myVocabulary")}</h1>
+        <p className="text-gray-600">{t("vocaManager.description")}</p>
       </div>
 
       <div className="mb-6">
         <div className="relative">
-          <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+          <Search className="absolute left-4 top-4 h-5 w-5 text-shiba-teal z-10" />
           <Input
-            placeholder="Search vocabulary and sentences..."
+            placeholder={t("vocaManager.search")}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-10"
+            className="pl-10 h-12 border-shiba-teal/30 bg-white/90 backdrop-blur-sm rounded-2xl focus:border-shiba-teal focus:ring-shiba-teal/20 shadow-sm"
           />
         </div>
       </div>
@@ -56,14 +56,18 @@ export const VocabularyManager = () => {
             className="flex items-center space-x-2"
           >
             <BookOpen className="h-4 w-4" />
-            <span>Vocabulary ({vocabularyWords.length})</span>
+            <span>
+              {t("vocaManager.vocabulary")} ({vocabularyWords.length})
+            </span>
           </TabsTrigger>
           <TabsTrigger
             value="sentences"
             className="flex items-center space-x-2"
           >
             <MessageSquare className="h-4 w-4" />
-            <span>Sentences ({savedSentences.length})</span>
+            <span>
+              {t("vocaManager.sentences")} ({savedSentences.length})
+            </span>
           </TabsTrigger>
         </TabsList>
 
@@ -73,10 +77,10 @@ export const VocabularyManager = () => {
               <CardContent className="flex flex-col items-center justify-center py-12">
                 <BookOpen className="h-12 w-12 text-gray-400 mb-4" />
                 <h3 className="font-medium text-gray-900 mb-2">
-                  No vocabulary words yet
+                  {t("vocaManager.noVoca")}
                 </h3>
                 <p className="text-gray-500 text-center">
-                  Start reading articles and save words to build your vocabulary
+                  {t("vocaManager.startReading")}
                 </p>
               </CardContent>
             </Card>
@@ -126,10 +130,10 @@ export const VocabularyManager = () => {
               <CardContent className="flex flex-col items-center justify-center py-12">
                 <MessageSquare className="h-12 w-12 text-gray-400 mb-4" />
                 <h3 className="font-medium text-gray-900 mb-2">
-                  No saved sentences yet
+                  {t("vocaManager.noSenten")}
                 </h3>
                 <p className="text-gray-500 text-center">
-                  Start reading articles and save useful sentences for reference
+                  {t("vocaManager.startSenten")}
                 </p>
               </CardContent>
             </Card>
@@ -154,11 +158,11 @@ export const VocabularyManager = () => {
                     </blockquote>
 
                     <div className="text-sm text-gray-600 mb-3">
-                      <strong>Context:</strong> {sentence.context}
+                      <strong>{t("vocaManager.context")}</strong> {sentence.context}
                     </div>
 
                     <div className="text-xs text-gray-500">
-                      Saved on{" "}
+                      {t("vocaManager.savedOn")}{" "}
                       {new Date(sentence.createdAt).toLocaleDateString()}
                     </div>
                   </CardContent>
