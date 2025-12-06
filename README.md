@@ -36,16 +36,25 @@ This is the frontend of Shiba-lingo. It is build with [Next.js](https://nextjs.o
 
 
 4. **Run Container:**
-
-   Create the docker container with:
-    ```bash
-    docker build -t shiba-frontend:latest .
-    ```
-   Run container
-    ```bash
-    docker run -p 3000:3000 --env-file ./.env.local shiba-frontend:latest
-    ```
-
+   -  **Option 1: Run container on local**
+      Modify the Dockerfile to `EXPOSE 3000`, and create the docker container with:
+      ```bash
+      docker build -t shiba-frontend:latest .
+      ```
+      Run container:
+       ```bash
+       docker run -p 3000:3000 --env-file ./.env.local shiba-frontend:latest
+       ```
+   - **Option 2: Run with k8s**
+     Modify the Dockerfile to `EXPOSE 8080`, and create the docker container with:
+     ```bash
+     # depoly with minikube
+      docker build -t shiba-frontend:latest .
+     
+     # depoly with GKE
+     docker buildx build --platform linux/amd64 -t us-central1-docker.pkg.dev/tcss559-au25-chaoyuuu/tcss559/shiba-frontend:latest .
+     ```
+     Run k8s (see the README.md in k8s folder)
 
 ## Learn More
 
