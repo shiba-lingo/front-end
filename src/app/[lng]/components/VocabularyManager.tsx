@@ -110,7 +110,7 @@ export const VocabularyManager = () => {
                     )}
 
                     <div className="flex flex-col space-y-2 text-xs text-gray-500">
-                      <Badge variant="outline" className="w-fit">
+                      <Badge variant="outline" className="w-fit whitespace-normal text-left break-words h-auto">
                         {word.articleTitle}
                       </Badge>
                       <span>
