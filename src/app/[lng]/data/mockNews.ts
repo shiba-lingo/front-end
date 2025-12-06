@@ -2,7 +2,7 @@ import { NewsArticle } from '../types';
 
 export const mockNews: NewsArticle[] = [
   {
-    id: '1',
+    _id: '1',
     title: 'New Technology Changes How We Learn',
     summary: 'Simple apps and websites are helping students learn better than before.',
     content: `Technology is changing how we learn. Many students now use apps and websites to study. These tools make learning fun and easy.
@@ -23,7 +23,7 @@ export const mockNews: NewsArticle[] = [
     readingTime: 3
   },
   {
-    id: '2',
+    _id: '2',
     title: 'Climate Change Solutions Emerge from Innovative Research',
     summary: 'Scientists develop groundbreaking technologies to address environmental challenges.',
     content: `Researchers worldwide are developing innovative solutions to combat climate change. Recent breakthroughs in renewable energy technology and carbon capture methods offer promising pathways to reduce global greenhouse gas emissions.
@@ -44,7 +44,7 @@ export const mockNews: NewsArticle[] = [
     readingTime: 5
   },
   {
-    id: '3',
+    _id: '3',
     title: 'Global Economic Paradigms Shift Toward Sustainable Development Models',
     summary: 'Financial institutions recalibrate investment strategies to prioritize environmental, social, and governance factors.',
     content: `The contemporary economic landscape is experiencing a fundamental transformation as financial institutions worldwide recalibrate their investment strategies to prioritize environmental, social, and governance (ESG) factors. This paradigmatic shift represents not merely a trend but a comprehensive restructuring of how capital allocation decisions are conceptualized and executed.
@@ -65,7 +65,7 @@ export const mockNews: NewsArticle[] = [
     readingTime: 8
   },
   {
-    id: '4',
+    _id: '4',
     title: 'Local Communities Build Better Parks',
     summary: 'People work together to make new parks in their neighborhoods.',
     content: `People in cities are working together to build new parks. They want safe places for children to play. They also want places to relax and meet neighbors.
