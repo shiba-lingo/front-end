@@ -31,6 +31,8 @@ const createApiClient = (baseURL: string | undefined): AxiosInstance => {
     //   'Authorization': `Bearer ${localStorage.getItem('user_token')}`
     },
   });
+  console.log(`Connect Service on :${baseURL}`)
+
 
   // 3. Attach our unified error handling to this new instance
   instance.interceptors.response.use(

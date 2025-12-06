@@ -42,6 +42,9 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 USER appuser
 
 # Expose the port your application runs on
+#ENV PORT=8080
+#EXPOSE 8080
+ENV PORT=3000
 EXPOSE 3000
 
 # The command to start the application
