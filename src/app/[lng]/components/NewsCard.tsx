@@ -156,7 +156,7 @@ export const NewsCard = ({ article, onClick }: NewsCardProps) => {
               <div className="flex items-center space-x-1">
                 <Calendar className="h-3 w-3" />
                 <span>
-                  {new Date(article.publishedAt).toLocaleDateString()}
+                  {new Date(article.createdAt).toLocaleDateString()}
                 </span>
               </div>
               <div className="flex items-center space-x-1">

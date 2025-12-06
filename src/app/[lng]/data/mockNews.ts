@@ -19,7 +19,7 @@ export const mockNews: NewsArticle[] = [
     imageUrl: 'https://images.unsplash.com/photo-1609619385076-36a873425636?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwaW5ub3ZhdGlvbnxlbnwxfHx8fDE3NTkwODYxMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     category: 'Technology',
     level: 'beginner',
-    publishedAt: '2024-01-15',
+    createdAt: '2024-01-15',
     readingTime: 3
   },
   {
@@ -40,7 +40,7 @@ export const mockNews: NewsArticle[] = [
     imageUrl: 'https://images.unsplash.com/photo-1565011471985-8a450248b005?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnZpcm9ubWVudCUyMGNsaW1hdGUlMjBjaGFuZ2V8ZW58MXx8fHwxNzU5MTIwNzMwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     category: 'Environment',
     level: 'intermediate',
-    publishedAt: '2024-01-14',
+    createdAt: '2024-01-14',
     readingTime: 5
   },
   {
@@ -61,7 +61,7 @@ export const mockNews: NewsArticle[] = [
     imageUrl: 'https://images.unsplash.com/photo-1710492341412-8b3aee7e70a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGZpbmFuY2UlMjBlY29ub215fGVufDF8fHx8MTc1OTEyMDczMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     category: 'Business',
     level: 'advanced',
-    publishedAt: '2024-01-13',
+    createdAt: '2024-01-13',
     readingTime: 8
   },
   {
@@ -86,7 +86,7 @@ export const mockNews: NewsArticle[] = [
     imageUrl: 'https://images.unsplash.com/photo-1677694028118-e4ad83cec03e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZXdzJTIwcmVhZGluZyUyMGVkdWNhdGlvbnxlbnwxfHx8fDE3NTkxMjA3MjV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     category: 'Community',
     level: 'beginner',
-    publishedAt: '2024-01-12',
+    createdAt: '2024-01-12',
     readingTime: 4
   }
 ];

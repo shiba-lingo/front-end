@@ -15,7 +15,7 @@ export interface NewsArticle {
   imageUrl: string;
   category: string;
   level: 'beginner' | 'intermediate' | 'advanced';
-  publishedAt: string;
+  createdAt: string;
   readingTime: number;
 }
 

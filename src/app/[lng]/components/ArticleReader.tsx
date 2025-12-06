@@ -218,7 +218,7 @@ export const ArticleReader = ({ article, onBack }: ArticleReaderProps) => {
           <div className="flex items-center text-sm text-gray-500 space-x-4 mb-6">
             <div className="flex items-center space-x-1">
               <Calendar className="h-4 w-4" />
-              <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
+              <span>{new Date(article.createdAt).toLocaleDateString()}</span>
             </div>
             <div className="flex items-center space-x-1">
               <Clock className="h-4 w-4" />

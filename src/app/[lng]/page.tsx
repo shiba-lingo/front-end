@@ -35,12 +35,25 @@ export default function Home() {
     setSelectedArticle(null);
   };
 
+  const estimateChineseReadingTime = (text: string, cpm = 400) => {
+    const pureText = text.replace(/\s/g, "");
+    const charCount = pureText.length;
+
+    if (charCount === 0) {
+      return 0;
+    }
+
+    const minutes = charCount / cpm;
+    return Math.ceil(minutes);
+  };
+
   useEffect(() => {
     apiClients.content.get("/contents").then((res) => {
       const newsData = res.data.data.map((news: NewsArticle) => {
         return {
           ...news,
           imageUrl: news.imageUrl.replace("240", "960"),
+          readingTime: estimateChineseReadingTime(news.content)
         };
       });
       setNews(newsData);
